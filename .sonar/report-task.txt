@@ -1,0 +1,5 @@
+projectKey=Design-Pattern
+serverUrl=http://localhost:9002
+dashboardUrl=http://localhost:9002/dashboard/index/Design-Pattern
+ceTaskId=AVTHwFThxYFu_xglrVrB
+ceTaskUrl=http://localhost:9002/api/ce/task?id=AVTHwFThxYFu_xglrVrB
