@@ -1,10 +1,10 @@
-package com.zone.session.mediator;
+package com.zone.session.langugae;
 
 /**
  * Enum for language
  *
  */
-enum Language {
+public enum Language {
     ENGLISH,
     FRENCH
 }

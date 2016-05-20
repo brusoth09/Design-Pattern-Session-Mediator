@@ -1,5 +1,7 @@
 package com.zone.session.observer;
 
+import com.zone.session.langugae.Language;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,7 +30,7 @@ abstract class User implements Observer{
     }
 
     public void sendMessage(String msg){
-        System.out.println(this.name+"[Language :"+lang+"]"+
+        System.out.println(this.name+"[Languagesss :"+lang+"]"+
                 ": Sending message = "+msg);
         notifyAllObservers(msg);
     }

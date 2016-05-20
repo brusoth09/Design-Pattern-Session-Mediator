@@ -1,5 +1,7 @@
 package com.zone.session.mediator;
 
+import com.zone.session.langugae.LanguageFactory;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,7 +11,7 @@ import java.util.List;
  */
 class ChatRoomMediatorImpl implements ChatRoomMediator {
     private final List<User> users;
-    private LanguageProcessor processor = new LanguageProcessor();
+    private LanguageFactory factory = new LanguageFactory();
 
     public ChatRoomMediatorImpl() {
         this.users = new ArrayList();
@@ -18,11 +20,7 @@ class ChatRoomMediatorImpl implements ChatRoomMediator {
     public void sendMessage(String msg, User user) {
         for(User u:users){
             if(u != user){
-                if(u.getLang() == user.getLang()) {
-                    u.receive(msg);
-                } else {
-                    u.receive(processor.convertLanguage(msg,user.getLang(),u.getLang()));
-                }
+                u.receive(factory.getLanguageProcessor(user.getLang(),u.getLang()).convert(msg));
             }
         }
     }
